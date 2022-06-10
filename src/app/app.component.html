@@ -1,1 +1,5 @@
+<app-menu *ngIf='auth.loggedIn()'></app-menu>
+
 <router-outlet></router-outlet>
+
+<app-rodape *ngIf="auth.loggedIn()"></app-rodape> 
