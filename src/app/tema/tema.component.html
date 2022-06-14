@@ -14,13 +14,14 @@
             <div class="row d-flex justify-content-center mt-4">
                 <div class="col-md-3">
                     <div class="form-group">
-                        <input [(ngModel)]='topic.description' type="text" class="form-control" id="descricao" placeholder="Digite a descrição do tema">
+                        <input [(ngModel)]='topic.description' type="text" class="form-control" id="descricao"
+                            placeholder="Digite a descrição do tema">
                     </div>
                 </div>
             </div>
 
             <div class="d-flex justify-content-center mb-5">
-                <button class="btn btn-light" (click)="register()" >Cadastrar</button>
+                <button class="btn btn-light" (click)="register()">Cadastrar</button>
             </div>
         </div>
     </div>
@@ -40,23 +41,23 @@
 
             <table class="table table-hover">
                 <thead>
-                  <tr>
-                    <th scope="col">#</th>
-                    <th scope="col">Descrição</th>
-                    <th scope="col" class="text-right">Modificações</th>
-                  </tr>
+                    <tr>
+                        <th scope="col">#</th>
+                        <th scope="col">Descrição</th>
+                        <th scope="col" class="text-right">Modificações</th>
+                    </tr>
                 </thead>
                 <tbody>
-                  <tr *ngFor='let topic of topicList'>
-                    <th>{{topic.id}}</th>
-                    <td>{{topic.description}}</td>
-                    <td class="d-flex justify-content-end">
-                      <button class="btn btn-info mr-3">Editar</button>
-                      <button class="btn btn-danger">Apagar</button>
-                    </td>
-                  </tr>
+                    <tr *ngFor='let topic of topicList'>
+                        <th>{{topic.id}}</th>
+                        <td>{{topic.description}}</td>
+                        <td class="d-flex justify-content-end">
+                            <button class="btn btn-info mr-3" [routerLink]="['/tema-edit', topic.id]">Editar</button>
+                            <button class="btn btn-danger" [routerLink]="['/tema-delete', topic.id]">Apagar</button>
+                        </td>
+                    </tr>
                 </tbody>
-              </table>
+            </table>
 
         </div>
     </div>
